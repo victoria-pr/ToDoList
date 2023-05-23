@@ -1,0 +1,1 @@
+ export * from './Title'; //exporta todos los componentes de Title
