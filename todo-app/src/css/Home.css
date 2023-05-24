@@ -1,0 +1,117 @@
+/* Estilos para el contenedor principal */
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Estilos para el texto de bienvenida */
+  nav p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para el botón de inicio de sesión y cierre de sesión */
+  nav button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos para el botón de inicio de sesión cuando no hay un usuario autenticado */
+  nav button.login-button {
+    background-color: #2196f3;
+  }
+  
+  nav button.login-button:hover {
+    background-color: #1e87db;
+  }
+  
+  /* Estilos para el contenedor principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Estilos para la sección de inicio de sesión */
+  section {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
+  /* Estilos para el título */
+  section p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para el formulario de inicio de sesión */
+  section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilos para los campos de entrada */
+  section form div {
+    margin-bottom: 15px;
+  }
+  
+  section form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  section form input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para los botones de inicio de sesión */
+  section form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  section form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos para el enlace de registro */
+  section p.text-sm {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  section p.text-sm a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  
