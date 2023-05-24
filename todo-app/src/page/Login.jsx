@@ -40,22 +40,22 @@ const Login = () => {
  
     return(
         <>
-            <main >        
-                <section>
+            <main className='loginmain'>        
+                <section className='loginsection'>
                     <div>                                            
-                        <p> MemoryApp </p>                       
+                        <p className='maintitulo'> MemoryApp </p>                       
                                                        
                         <form>                                              
                             <div>
                                 <label htmlFor="email-address">
                                     Email address
                                 </label>
-                                <input
+                                <input className='loginInput'
                                     id="email-address"
                                     name="email"
                                     type="email"                                    
                                     required                                                                                
-                                    placeholder="Email address"
+                                    placeholder="..."
                                     onChange={(e)=>setEmail(e.target.value)}
                                 />
                             </div>
@@ -64,12 +64,12 @@ const Login = () => {
                                 <label htmlFor="password">
                                     Password
                                 </label>
-                                <input
+                                <input className='loginInput'
                                     id="password"
                                     name="password"
                                     type="password"                                    
                                     required                                                                                
-                                    placeholder="Password"
+                                    placeholder="..."
                                     onChange={(e)=>setPassword(e.target.value)}
                                 />
                             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { signOut } from "firebase/auth";
 import {auth} from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import '../css/Home.css';
+
  
 const Home = ({user}) => {
     const navigate = useNavigate();
@@ -18,9 +18,10 @@ const Home = ({user}) => {
     }
    
     return(
-            <nav>
+        <>
+            <nav className="homenav">
                 <p>
-                    WELCOME: {user ? user.email : "Guest"}
+                    WELCOME {user ? user.email : "Guest"}
                 </p>
  
                 <div>
@@ -35,6 +36,23 @@ const Home = ({user}) => {
                     }
         		</div>
             </nav>
+            <main>
+                <section className='todolistCard'>
+                    <div>
+                        <button className='todoboton' onClick={() => navigate("/ToDoList")}>
+                            To Do List
+                        </button>
+                    </div>
+                </section>
+                <section className='memoCard'>
+                    <div>
+                        <button className='memoboton' onClick={() => navigate("/Memory")}>
+                            Memory
+                        </button>
+                    </div>
+                </section>
+            </main>
+        </>
     )
 }
  
