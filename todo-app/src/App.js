@@ -7,6 +7,7 @@ import {Routes, Route} from 'react-router-dom';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from './firebase';
 import ToDoListApp from './ToDoListApp';
+import MemoryApp from './Memory/MemoryApp';
 
  
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route path="/signup" element={<Signup/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/todolist" element={<ToDoListApp/>}/>
+              <Route path="/memorygame" element={<MemoryApp/>}/>
             </Routes>                    
         </section>
       </div>

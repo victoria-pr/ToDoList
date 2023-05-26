@@ -46,7 +46,7 @@ const Home = ({user}) => {
                 </section>
                 <section className='memoCard'>
                     <div>
-                        <button className='memoboton' onClick={() => navigate("/Memory")}>
+                        <button className='memoboton' onClick={() => navigate("/memorygame")}>
                             Memory
                         </button>
                     </div>
