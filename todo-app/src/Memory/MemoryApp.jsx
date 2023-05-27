@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Memory.css";
 import Card from "./components/Card";
 import GameOver from "./components/GameOver";
 
 function MemoryApp() {
+    const navigate = useNavigate();
   let arrayOfImages = [
     { 
         num: 1,
@@ -48,8 +50,7 @@ function MemoryApp() {
     //add id
     .map((item, index) => ({ ...item, id: index + 1 }))
     .sort((a,b) => 0.5 - Math.random());
-    setScore(0)
-
+    setScore(0);
     setCards(shuffledArray);
   };
   //console.log(cards);  
@@ -57,7 +58,7 @@ function MemoryApp() {
 
   useEffect(() => {
     shuffleImages();
-  }, [])
+  }, []);
 
 
     useEffect(() => { 
@@ -65,7 +66,7 @@ function MemoryApp() {
         if(selectedCards.length === 2){
             setTimeout(() => {
                 setSelectedCards([]);
-            }, 1000);
+            }, 700);
             checkMatch();
         }
     }, [selectedCards]);
@@ -99,8 +100,15 @@ useEffect(() => {
 
   
   return (
-    <>
-    {gameOver && <GameOver setTries={setTries} tries = {tries} setGameOver= {setGameOver}/>} 
+    <> 
+    <nav>
+        <div className="memorynav">
+          <button className="homeboton" onClick={() => navigate('/')}>
+            Home
+          </button>
+        </div>
+      </nav>
+    {gameOver && ( <GameOver setTries={setTries} tries = {tries} setGameOver= {setGameOver}/>)} 
   <div className="memocontainer">
     <div className="score-container">
         <div className="score">Score: {score}</div>

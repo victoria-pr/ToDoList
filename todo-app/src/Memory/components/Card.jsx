@@ -16,6 +16,7 @@ const Card = ({card, setSelectedCards, selectedCards}) => {
             card.isMatch
             ){
             setIsFlipped(true);
+            console.log("isFlipped:", isFlipped)
         }else{
             setIsFlipped(false);
         }
@@ -23,7 +24,7 @@ const Card = ({card, setSelectedCards, selectedCards}) => {
 
 
     return (
-    <div className = {isFlipped ? "card open stop-clicks" : "card"} onClick={handleClick}>
+    <div className = {isFlipped ? "card open stop-clicking" : "card"} onClick={handleClick}>
         <div className="fron">
             <img src= {card.img} alt="" />  
         </div>
