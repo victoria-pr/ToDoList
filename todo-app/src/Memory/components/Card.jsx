@@ -23,7 +23,7 @@ const Card = ({card, setSelectedCards, selectedCards}) => {
 
 
     return (
-    <div className = {isFlipped ? "card open" : "card"} onClick={handleClick}>
+    <div className = {isFlipped ? "card open stop-clicks" : "card"} onClick={handleClick}>
         <div className="fron">
             <img src= {card.img} alt="" />  
         </div>

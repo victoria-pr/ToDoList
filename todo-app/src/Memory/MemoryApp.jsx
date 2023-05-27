@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Memory.css";
 import Card from "./components/Card";
+import GameOver from "./components/GameOver";
 
 function MemoryApp() {
   let arrayOfImages = [
@@ -39,14 +40,15 @@ function MemoryApp() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [score, setScore] = useState(0);
   const [tries, setTries] = useState(0);    
+  const [gameOver, setGameOver] = useState(false);
 
   const shuffleImages = () => {
     //doble array
     let shuffledArray = [...arrayOfImages, ...arrayOfImages]
     //add id
     .map((item, index) => ({ ...item, id: index + 1 }))
-    //shuffle
     .sort((a,b) => 0.5 - Math.random());
+    setScore(0)
 
     setCards(shuffledArray);
   };
@@ -83,18 +85,22 @@ const checkMatch = () => {
         //console.log("no match!");
         setTries((prev) => prev + 1);
     }
-}
-//console.log(cards);
+};
        
 //RESTART GAME
 useEffect(() => {
     if(score === arrayOfImages.length){
-        console.log("game over!");
+        setTimeout(() => {
+        shuffleImages();
+        setGameOver(true);
+    }, 1000);
     }
-}, [score]);
+}, [score, shuffleImages]);
 
-
+  
   return (
+    <>
+    {gameOver && <GameOver setTries={setTries} tries = {tries} setGameOver= {setGameOver}/>} 
   <div className="memocontainer">
     <div className="score-container">
         <div className="score">Score: {score}</div>
@@ -109,6 +115,7 @@ useEffect(() => {
             ))}
     </div>
 </div>
+</>
 );
 }
 

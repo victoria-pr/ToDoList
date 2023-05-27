@@ -51,6 +51,9 @@ const Home = ({user}) => {
                         </button>
                     </div>
                 </section>
+                <footer className='homefooter'>
+                    <p> © 2023 - All rights reserved </p>
+                </footer>
             </main>
         </>
     )
