@@ -10,23 +10,22 @@ const Card = ({card, setSelectedCards, selectedCards}) => {
         setSelectedCards([...selectedCards, card]);
     };
 
-    useEffect(() => {
+    useEffect(() => { 
         if(selectedCards[0] ===  card || 
             selectedCards[1] === card || 
             card.isMatch
             ){
             setIsFlipped(true);
-            console.log("isFlipped:", isFlipped)
-        }else{
+        }else{ 
             setIsFlipped(false);
         }
     }, [selectedCards]);
 
 
-    return (
+    return ( //
     <div className = {isFlipped ? "card open stop-clicking" : "card"} onClick={handleClick}>
         <div className="fron">
-            <img src= {card.img} alt="" />  
+            <img src= {card.img}/>  
         </div>
         <div className="back"></div>
     </div>

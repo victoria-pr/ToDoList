@@ -1,9 +1,12 @@
-/*body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #a4daf5, #cbbef5);
-}*/
+@font-face {
+    font-family: Cherry;
+    src: url(../fonts/CherryBombOne-Regular.ttf);
+  }
+
+body{
+    background-color: #f3e3ff;
+    font: 18px "Cherry";
+}
 
 *{
     padding: 0;
@@ -53,6 +56,7 @@ img{
     align-items: center;
     background-color: #f3e3ff;
     gap: 5px;
+    margin-top: 50px;
     /*background: linear-gradient(to right, #a4daf5, #cbbef5);*/
 }
 
