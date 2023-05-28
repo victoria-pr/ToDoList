@@ -6,6 +6,7 @@ import '../css/Home.css';
  
 const Login = () => {
     const navigate = useNavigate();
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
        
@@ -15,7 +16,7 @@ const Login = () => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate("/ToDoList")
+            navigate("/")
             console.log(user);
         })
         .catch((error) => {
@@ -45,7 +46,20 @@ const Login = () => {
                     <div>                                            
                         <p className='maintitulo'> MemoryApp </p>                       
                                                        
-                        <form>                                              
+                        <form>
+                        {/* <div>
+                            <label htmlFor="name-address">
+                                 Name
+                            </label>
+                            <input className='loginInput'
+                                id="name-address"
+                                name="name"
+                                type="name"                                    
+                                required                                                                                
+                                placeholder="..."
+                                onChange={(e)=>setName(e.target.value)}
+                            />
+                            </div>            */}                                   
                             <div>
                                 <label htmlFor="email-address">
                                     Email address
@@ -80,7 +94,7 @@ const Login = () => {
                                 >      
                                     Login                                                                  
                                 </button>
-                                <button                                    
+                                <button                                  
                                     onClick={onGoogleLogin}                                        
                                 >      
                                     Login with Google                                                

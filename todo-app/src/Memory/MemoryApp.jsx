@@ -49,6 +49,7 @@ function MemoryApp() {
     let shuffledArray = [...arrayOfImages, ...arrayOfImages]
     //add id
     .map((item, index) => ({ ...item, id: index + 1 }))
+    //shuffle
     .sort((a,b) => 0.5 - Math.random());
     setScore(0);
     setCards(shuffledArray);
@@ -90,7 +91,7 @@ const checkMatch = () => {
        
 //RESTART GAME
 useEffect(() => {
-    if(score === arrayOfImages.length){
+    if(score === arrayOfImages.length) {
         setTimeout(() => {
         shuffleImages();
         setGameOver(true);

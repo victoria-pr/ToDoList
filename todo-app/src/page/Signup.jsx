@@ -5,7 +5,7 @@ import { auth } from '../firebase';
  
 const Signup = () => {
     const navigate = useNavigate();
- 
+    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
  
@@ -31,23 +31,36 @@ const Signup = () => {
     }
  
   return (
-    <main >        
-        <section>
+    <main className='loginmain' >        
+        <section className='loginsection'>
             <div>
                 <div>                  
-                    <h1> FocusApp </h1>                                                                            
-                    <form>                                                                                            
+                    <h1 className='maintitulo'> SignUp </h1>                                                                            
+                    <form>
+                    {/* <div>
+                        <label htmlFor="name-address">
+                            Name
+                        </label>
+                        <input className='loginInput'
+                            type="name"
+                            laberl="Name address"
+                            value={name}
+                            onChange={(e)=>setName(e.target.value)}
+                            required                                                                    
+                            placeholder="..."
+                            />
+                        </div>           */}                                                                                      
                         <div>
                             <label htmlFor="email-address">
                                 Email address
                             </label>
-                            <input
+                            <input className='loginInput'
                                 type="email"
                                 label="Email address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}  
                                 required                                    
-                                placeholder="Email address"                                
+                                placeholder="..."                                
                             />
                         </div>
 
@@ -55,26 +68,26 @@ const Signup = () => {
                             <label htmlFor="password">
                                 Password
                             </label>
-                            <input
+                            <input className='loginInput'
                                 type="password"
                                 label="Create password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)} 
                                 required                                 
-                                placeholder="Password"              
+                                placeholder="..."              
                             />
-                        </div>                                             
-                        
+                        </div>                                      
                         <button
                             type="submit" 
-                            onClick={onSubmit}                        
+                            onClick={onSubmit}
+                            className='signupbutton'
+
                         >  
                             Sign up                                
-                        </button>
-                                                                     
+                        </button>                                   
                     </form>
                    
-                    <p>
+                    <p className="text-sm">
                         Already have an account?{' '}
                         <NavLink to="/login" >
                             Sign in
