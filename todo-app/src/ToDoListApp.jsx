@@ -25,7 +25,7 @@ function ToDoListApp() {
 
     const todoList = [...todos, newTodo];
     setTodos(todoList);
-    localStorage.setItem('todos', JSON.stringify(todoList)); // Guardar en el localStorage
+    localStorage.setItem('todos', JSON.stringify(todoList));
   };
 
   const handleSetCompleted = (id) => {
@@ -36,19 +36,19 @@ function ToDoListApp() {
       return todo;
     });
     setTodos(updatedList);
-    localStorage.setItem('todos', JSON.stringify(updatedList)); // Guardar en el localStorage
+    localStorage.setItem('todos', JSON.stringify(updatedList));
   };
 
   const handleDelete = (id) => {
     const updatedList = todos.filter((todo) => todo.id !== id);
     setTodos(updatedList);
-    localStorage.setItem('todos', JSON.stringify(updatedList)); // Guardar en el localStorage
+    localStorage.setItem('todos', JSON.stringify(updatedList));
   };
 
   const handleClearCompleted = () => {
     const updatedList = todos.filter((todo) => !todo.completed);
     setTodos(updatedList);
-    localStorage.setItem('todos', JSON.stringify(updatedList)); // Guardar en el localStorage
+    localStorage.setItem('todos', JSON.stringify(updatedList));
   };
 
   const showAllTodos = () => {
@@ -113,3 +113,17 @@ function ToDoListApp() {
 }
 
 export default ToDoListApp;
+
+
+//firestone
+/*
+const addTodo = (title) => {
+  const newTodo = {
+    title,
+    completed: false,
+  };
+
+  const todoList = [...todos, newTodo];
+  setTodos(todoList);
+  saveData (newTodo);
+};*/

@@ -38,63 +38,63 @@ function MemoryApp() {
         isMatch: false
     },
   ];
-  const [cards, setCards] = useState([]);
-  const [selectedCards, setSelectedCards] = useState([]);
-  const [score, setScore] = useState(0);
+  const [cards, setCards] = useState([]); // array de las cartas que se van a mostrar en la pantalla (12)
+  const [selectedCards, setSelectedCards] = useState([]); //array de las cartas que se van a comparar (2)
+  const [score, setScore] = useState(0); 
   const [tries, setTries] = useState(0);    
-  const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState(false); //para mostrar el game over cuando se acaben las cartas y se reinicie el juego
 
   const shuffleImages = () => {
     //doble array
-    let shuffledArray = [...arrayOfImages, ...arrayOfImages]
+    let shuffledArray = [...arrayOfImages, ...arrayOfImages] //duplicamos el array (para que haya 2 de cada carta)
     //add id
-    .map((item, index) => ({ ...item, id: index + 1 }))
+    .map((item, index) => ({ ...item, id: index + 1 })) //añadimos un id único a cada carta
     //shuffle
-    .sort((a,b) => 0.5 - Math.random());
-    setScore(0);
-    setCards(shuffledArray);
+    .sort((a,b) => 0.5 - Math.random()); //ordenamos aleatoriamente las cartas.
+    setScore(0); //reiniciamos el score a 0 cuando se reinicia el juego 
+    setCards(shuffledArray); //guardamos el array en el estado cards nuevamente barajado
   };
-  //console.log(cards);  
 
 
-  useEffect(() => {
+  useEffect(() => { //Se useEffect para asegurar que las cartas se barajen al inicio del juego
     shuffleImages();
   }, []);
 
 
     useEffect(() => { 
-        console.log(selectedCards);
-        if(selectedCards.length === 2){
-            setTimeout(() => {
+        //console.log(selectedCards);
+        if(selectedCards.length === 2){ // comprueba si hay 2 cartas seleccionadas
+            setTimeout(() => { //si hay 2 cartas seleccionadas, se ejecuta el setTimeout para que se muestren durante 700ms y luego se oculten si no son iguales
                 setSelectedCards([]);
             }, 700);
-            checkMatch();
+            checkMatch(); //comprueba si las cartas son iguales
         }
     }, [selectedCards]);
 
 
 const checkMatch = () => {
-    if(selectedCards[0].num === selectedCards[1].num){
-        setScore((prev) => prev + 1); //prev es el valor anterior
-       let updatedCards = cards.map((card) => {
-            if(card.num === selectedCards[0].num){
-                return { ...card, isMatch: true};
+    if(selectedCards[0].num === selectedCards[1].num){ //comprueba si las cartas son iguales
+        setScore((prev) => prev + 1); //si las cartas son iguales, se suma 1 al score
+       let updatedCards = cards.map((card) => { //se actualiza el estado de las cartas para que se muestren como matched
+            if(card.num === selectedCards[0].num){ //si las cartas son iguales, se actualiza el estado de las cartas para que se muestren como matched
+                return { ...card, isMatch: true}; //se actualiza el estado de las cartas para que se muestren como matched
             }
-            return card;
+            return card; //se actualiza el estado de las cartas para que se muestren como matched
         });
         setCards(updatedCards);
     }else{
         //console.log("no match!");
-        setTries((prev) => prev + 1);
+        setTries((prev) => prev + 1); //si las cartas no son iguales, se suma 1 a los intentos
     }
 };
        
 //RESTART GAME
 useEffect(() => {
-    if(score === arrayOfImages.length) {
+    if(score === arrayOfImages.length) { //si el score es igual a la longitud del array de cartas, se ejecuta el setTimeout para que se muestre el game over
         setTimeout(() => {
-        shuffleImages();
-        setGameOver(true);
+        shuffleImages(); //se barajan las cartas
+        setGameOver(true); //se muestra el game over
+        setSelectedCards([]); //se reinicia el array de cartas seleccionadas
     }, 1000);
     }
 }, [score, shuffleImages]);
