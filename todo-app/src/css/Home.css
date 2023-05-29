@@ -134,8 +134,8 @@
     background-color: #d8f7fb;
     padding: 100px;
     text-align: center;
-    height: 400px;
-    border: 1px solid #65e2f3;
+    height: 350px;
+    border: 1px solid #faf5a7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,8 +158,8 @@
     padding: 100px;
     border-radius: 5px;
     text-align: center;
-    height: 400px;
-    border: 1px solid #65e2f3;
+    height: 350px;
+    border: 1px solid #faf5a7;
     display: flex;
     justify-content: center;
     align-items: center;

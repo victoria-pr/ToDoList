@@ -102,7 +102,7 @@ useEffect(() => {
   
   return (
     <> 
-    <nav>
+    <nav> 
         <div className="memorynav">
           <button className="homeboton" onClick={() => navigate('/')}>
             Home
